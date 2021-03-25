@@ -1,18 +1,18 @@
 /*DERLEME KILAVUZU: 
- * Oyun konsolda çalışacaksa: Oyun.java dosyası application isimli bir paketin içine konur, Oyun.java' nın void main()' i çağırılır.
- * 	Eğer başka bir classtan çağırılacaksa bir adet oyun instantiate edilir ve Oyun.oynat(true) fonksiyonu çağırılır(true inputu: konsolda çalışma ayarlarını yapar).
+ * Oyun konsolda Ã§alÄ±ÅŸacaksa: Oyun.java dosyasÄ± application isimli bir paketin iÃ§ine konur, Oyun.java' nÄ±n void main()' i Ã§aÄŸÄ±rÄ±lÄ±r.
+ * 	EÄŸer baÅŸka bir classtan Ã§aÄŸÄ±rÄ±lacaksa bir adet oyun instantiate edilir ve Oyun.oynat(true) fonksiyonu Ã§aÄŸÄ±rÄ±lÄ±r(true inputu: konsolda Ã§alÄ±ÅŸma ayarlarÄ±nÄ± yapar).
  * 
- * Oyun GUI ile çalışacaksa: Main.java ve Oyun.java dosyaları application isimli bir paketin içine konur. Main.java'nın void main' i çağırılır.
- * 	GUI' de sorunlar vardır. Detaylı bilgi Main.java GUI KULLANIM KILAVUZU' nda paylaşılmıştır. 
+ * Oyun GUI ile Ã§alÄ±ÅŸacaksa: Main.java ve Oyun.java dosyalarÄ± application isimli bir paketin iÃ§ine konur. Main.java'nÄ±n void main' i Ã§aÄŸÄ±rÄ±lÄ±r.
+ * 	GUI' de sorunlar vardÄ±r. DetaylÄ± bilgi Main.java GUI KULLANIM KILAVUZU' nda paylaÅŸÄ±lmÄ±ÅŸtÄ±r. 
  * 
  * GUI KULLANIM KILAVUZU:
- * Main(Main.java) GUI' nin hazırlandığı classtır. GUI kullanılmak isteniyorsa bu classın void main()' i çağırılır.
- * GUI' de herhangi bir tuşa basıldığında bir adet Oyun instantiate edilir, Oyun.oynat() fonksiyonu çağırılır ve oyun başlar. 
- * Ne yazık ki GUI ve Oyun eş zamanlı(multi thread) çalıştırılamamıştır.
- * GUI' den oyun başlatılınca GUI geçici olarak donmaktadır. Oyuna konsoldan devam edilir.
- * Oyun bitince GUI serbest kalır ve oyunun sonucunu gösterir.
- * Bu sorunun Threadler, wait() ve sleep() methodları, synched classlarla çözüleceği düşünülmektedir ama
- * proje teslim tarihine kadar bu konuları yeterince araştıracak fırsatı ne yazık ki bulunamamıştır.
+ * Main(Main.java) GUI' nin hazÄ±rlandÄ±ÄŸÄ± classtÄ±r. GUI kullanÄ±lmak isteniyorsa bu classÄ±n void main()' i Ã§aÄŸÄ±rÄ±lÄ±r.
+ * GUI' de herhangi bir tuÅŸa basÄ±ldÄ±ÄŸÄ±nda bir adet Oyun instantiate edilir, Oyun.oynat() fonksiyonu Ã§aÄŸÄ±rÄ±lÄ±r ve oyun baÅŸlar. 
+ * Ne yazÄ±k ki GUI ve Oyun eÅŸ zamanlÄ±(multi thread) Ã§alÄ±ÅŸtÄ±rÄ±lamamÄ±ÅŸtÄ±r.
+ * GUI' den oyun baÅŸlatÄ±lÄ±nca GUI geÃ§ici olarak donmaktadÄ±r. Oyuna konsoldan devam edilir.
+ * Oyun bitince GUI serbest kalÄ±r ve oyunun sonucunu gÃ¶sterir.
+ * Bu sorunun Threadler, wait() ve sleep() methodlarÄ±, synched classlarla Ã§Ã¶zÃ¼leceÄŸi dÃ¼ÅŸÃ¼nÃ¼lmektedir ama
+ * proje teslim tarihine kadar bu konularÄ± yeterince araÅŸtÄ±racak fÄ±rsatÄ± ne yazÄ±k ki bulunamamÄ±ÅŸtÄ±r.
  */
 
 package application;
@@ -37,9 +37,9 @@ import javafx.scene.layout.StackPane;
 
 public class Main extends Application implements EventHandler<ActionEvent>  {
 	public static boolean inputIstendi;
-	static boolean inputGeldi; //GUIDen input girilip girilmediğini temsil eder
-	static String input; //basılan tuşun değeri
-	static Label label; //Ekrana yazdırılacak outputu gösterir
+	static boolean inputGeldi; //GUIDen input girilip girilmediÄŸini temsil eder
+	static String input; //basÄ±lan tuÅŸun deÄŸeri
+	static Label label; //Ekrana yazdÄ±rÄ±lacak outputu gÃ¶sterir
 	
 	Oyun oyun; //Oyun instanc
 		
@@ -48,7 +48,7 @@ public class Main extends Application implements EventHandler<ActionEvent>  {
 		try {			
 			inputGeldi=false;
 			inputIstendi=false;
-			primaryStage.setTitle("Sayı Tahmini Oyunu");
+			primaryStage.setTitle("SayÄ± Tahmini Oyunu");
 			
 			HBox tuslarBox=new HBox();
 			ArrayList<Button> tuslar=new ArrayList<Button>();
@@ -57,7 +57,7 @@ public class Main extends Application implements EventHandler<ActionEvent>  {
 				tuslar.get(i).setOnAction(this);
 				tuslarBox.getChildren().add(tuslar.get(i));
 			}
-			label=new Label("Herhangi bir tuşa basınız. Konsoldan oynayınız. Oyun sonucunu görmek için bu pencereye dönünüz.");
+			label=new Label("Herhangi bir tuÅŸa basÄ±nÄ±z. Konsoldan oynayÄ±nÄ±z. Oyun sonucunu gÃ¶rmek iÃ§in bu pencereye dÃ¶nÃ¼nÃ¼z.");
 			StackPane layout=new StackPane();
 			layout.getChildren().add(tuslarBox);
 			layout.getChildren().add(label);
@@ -72,28 +72,23 @@ public class Main extends Application implements EventHandler<ActionEvent>  {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Main/void main kullanıldı.");
+		System.out.println("Main/void main kullanÄ±ldÄ±.");
 		launch(args);
 		
 		
 	}
 	
-	public static void updateLabel(String mesaj) {
-		//Oyun nesnesinden çağrılır. GUI' deki Label' a string outputları yazdırır.
-		label.setText(mesaj);
-	}
-	
 	@Override
 	public void handle(ActionEvent event) {
 		if(oyun==null) {
-			//Oyun instantiate edilmediyse, herhangi bir tuşa basıldığında oyun GUI' den oynanacak şekilde(input: false) başlasın.
+			//Oyun instantiate edilmediyse, herhangi bir tuÅŸa basÄ±ldÄ±ÄŸÄ±nda oyun GUI' den oynanacak ÅŸekilde(input: false) baÅŸlasÄ±n.
 			oyun=new Oyun(false);
 			oyun.oynat();
 		}
 		if(inputIstendi) {
 			input=((Button) event.getSource()).getText(); //inputu kaydet.
-			inputGeldi=true; //GUI input döndürdü.
-			inputIstendi=false; //artık input istenmiyor.
+			inputGeldi=true; //GUI input dÃ¶ndÃ¼rdÃ¼.
+			inputIstendi=false; //artÄ±k input istenmiyor.
 		}
 	}
 	
