@@ -1,6 +1,6 @@
 # SayiTahminiOyunu
 
-/* DERLEME KILAVUZU: 
+ * DERLEME KILAVUZU: 
  * Oyun konsolda çalışacaksa: Oyun.java dosyası application isimli bir paketin içine konur, Oyun.java' nın void main()' i çağırılır.
  * 	Eğer başka bir classtan çağırılacaksa bir adet oyun instantiate edilir ve Oyun.oynat(true) fonksiyonu çağırılır(true inputu: konsolda çalışma ayarlarını yapar).
  * 
@@ -31,4 +31,4 @@
  * Oyun bitince GUI serbest kalır ve oyunun sonucunu gösterir.
  * Bu sorunun Threadler, wait() ve sleep() methodları, synched classlarla çözüleceği düşünülmektedir ama
  * proje teslim tarihine kadar bu konuları yeterince araştıracak fırsatı ne yazık ki bulunamamıştır.
- */
+ 
