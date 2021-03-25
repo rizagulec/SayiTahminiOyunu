@@ -77,7 +77,7 @@ public class Main extends Application implements EventHandler<ActionEvent>  {
 		
 		
 	}
-	
+		
 	@Override
 	public void handle(ActionEvent event) {
 		if(oyun==null) {
