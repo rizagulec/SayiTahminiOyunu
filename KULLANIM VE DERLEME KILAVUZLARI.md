@@ -12,8 +12,8 @@
   ve sırayla tahmin ederek karşı tarafın tuttuğu sayıyı bulmaya çalışırlar. Doğru tahmini ilk yapan kazanır. 
   Doğru tahmin edilen her basamak için karşı tarafa o sayıda pozitif ipucu verilir.
   Doğru tahmin edilen ama yanlış basamaktaki her rakam için karşı tarafa o sayıda negatif ipucu verilir.
-  Örnek: Doğru Sayı:1234 Tahmin:1239 ise pozitif:3 negatif:0 
-  Örnek: Doğru Sayı:1234 Tahmin:4321 ise pozitif:0 negatif:4
+  Örnek: Doğru Sayı:1234 Tahmin:1239 ise pozitif:3 negatif:0 .
+  Örnek: Doğru Sayı:1234 Tahmin:4321 ise pozitif:0 negatif:4 .
   CPU gelen ipuçlarını bütün sayı kombinasyonlarında test ederek mümkün olmayan kombinasyonları eler ve en son kalan kombinasyonu doğru olarak tahmin eder.
   Kullanıcının her şart altında integer değer gireceği var sayılmıştır.
   Kullanıcı rakam(0-9 arası tam sayılar) olmayan sayı ya da karakter girerse, rakamları farklı olmayan sayı oluşturmaya çalışırsa, imkansız ipuçları oluşturmaya çalışırsa 
