@@ -1,6 +1,7 @@
 /*DERLEME KILAVUZU: 
  * Oyun konsolda çalışacaksa: Oyun.java dosyası application isimli bir paketin içine konur, Oyun.java' nın void main()' i çağırılır.
- * 	Eğer başka bir classtan çağırılacaksa bir adet oyun instantiate edilir ve Oyun.oynat(true) fonksiyonu çağırılır(true inputu: konsolda çalışma ayarlarını yapar).
+ * 	Eğer başka bir classtan çağırılacaksa bir adet oyun Oyun.(true) şeklinde constructorla instantiate edilir(true inputu: konsolda çalışma ayarlarını yapar) 
+ *	ve Oyun.oynat() fonksiyonu çağırılır.
  * 
  * Oyun GUI ile çalışacaksa: Main.java ve Oyun.java dosyaları application isimli bir paketin içine konur. Main.java'nın void main' i çağırılır.
  * 	GUI' de sorunlar vardır. Detaylı bilgi Main.java GUI KULLANIM KILAVUZU' nda paylaşılmıştır. 
