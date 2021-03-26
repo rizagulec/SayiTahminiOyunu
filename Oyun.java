@@ -122,7 +122,7 @@ public class Oyun {
 				+"\n");
 	}
     
-	private void kullaniciyaIpucVerTahminAl() {
+	private void kullaniciyaIpucVerTahminAl() { //Varsa kullanıcıya ipucu verilir ve tahmini alınır.
 		if(oyunBitmeli) {return;}
 		
 		if(tahminler.size()!=0) {
