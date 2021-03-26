@@ -39,7 +39,7 @@ public class Oyun {
 			
 		}
 	private boolean konsoldaCalismali; //true ise konsola göre ayar yapılır, false ise GUI' ye göre ayar yapılır.
-	private boolean debugModu; //Debug modunda kullanıcı 1234 sayısını seçtiği var sayılır. İpuçları sistem tarafından hesaplanır. Debugging işlemi kolaylaşır.  
+	private boolean debugModu; //Debug modunda kullanıcının 1234 sayısını seçtiği var sayılır. İpuçları sistem tarafından hesaplanır. Debugging işlemi kolaylaşır.  
 	private Scanner keyboard;
 	private Integer cpununKonumu[]= {0,0,0,0,0}; //CPUnun seçtiği sayıyı temsil eder.
 	private Integer cpununTahmini[]= {0,0,0,0,0}; //CPUnun tahmin ettiği sayıyı temsil eder.
@@ -81,9 +81,9 @@ public class Oyun {
 				}	
 			}
 		}
-	    this.cpununKonumu=this.uzay.get(this.rand.nextInt(this.uzay.size())); //CPU uzaydan rastgele bir sayı seçer
+	    this.cpununKonumu=this.uzay.get(this.rand.nextInt(this.uzay.size())); //CPU uzaydan rastgele bir sayı seçer.
 	    //System.out.println(cpununKonumu[0]+""+cpununKonumu[1]+""+cpununKonumu[2]+""+cpununKonumu[3]+"");
-	    this.cpununTahmini=this.uzay.get(this.rand.nextInt(this.uzay.size())); //CPU ilk tahminini rastgele seçer
+	    this.cpununTahmini=this.uzay.get(this.rand.nextInt(this.uzay.size())); //CPU ilk tahminini rastgele seçer.
 	
     }
 	public void oynat() {
@@ -111,7 +111,6 @@ public class Oyun {
 				+"Örnek: Doğru Sayı:1234 Tahmin:1239 ise pozitif:3 negatif:0 \n"
 				+"Örnek: Doğru Sayı:1234 Tahmin:4321 ise pozitif:0 negatif:4 \n"
 				+"CPU gelen ipuçlarını bütün sayı kombinasyonlarında test ederek mümkün olmayan kombinasyonları eler ve en son kalan kombinasyonu doğru olarak tahmin eder.\n"
-				+"Kullanıcının her şart altında integer değer gireceği var sayılmıştır.\n"
 				+"Kullanıcı rakam(0-9 arası tam sayılar) olmayan sayı ya da karakter girerse, rakamları farklı olmayan sayı oluşturmaya çalışırsa, imkansız ipuçları oluşturmaya çalışırsa \n"
 				+"Uyarı alır ve tekrar giriş yapması istenir.\n"
 				+"Kullanıcı ipuçlarını yanlış hesaplarsa tahmin edilecek olası kombinasyon kalmaz ve hakem hata bildirisi yapar\n"
@@ -215,7 +214,7 @@ public class Oyun {
 		System.out.println("Kalan kombinasyon sayısı: "+uzay.size());
 		if(this.debugModu==true) {
 			Integer[] a= {1,2,3,4};
-			String dogruCevap = debugOtoIpucuHesapla(this.tahminler.get(this.tahminler.size()-1), 0, 0,a);
+			String dogruCevap = debugOtoIpucuHesapla(this.tahminler.get(this.tahminler.size()-1), a);
 			yazdir("Tahminim: "+x+""+y+""+z+""+w+" Lütfen negatif ve pozitif ipuçlarını sırayla,- işareti kullanmadan giriniz. "+dogruCevap);}
 		else{yazdir("Tahminim: "+x+""+y+""+z+""+w+" Lütfen negatif ve pozitif ipuçlarını sırayla,- işareti kullanmadan giriniz.");}
 		
@@ -229,7 +228,7 @@ public class Oyun {
 			neg=okut();
 			poz=okut();
 			hataliGiris=true;}
-		while(poz==3&&neg==1 || poz+neg>4 || neg>4||neg<0 || poz>4||poz<0);
+		while(poz==3&&neg==1 || poz+neg>4 || neg>4||neg<0 || poz>4||poz<0); //Imkansız ipucu kombinasyonu girdikçe başa dön. 
 		cpuyaNegKayit.add(neg);
 		cpuyaPozKayit.add(poz);
 		
@@ -300,7 +299,7 @@ public class Oyun {
 	}
 
 
-	private Integer okut() {//İleride input arayüzden alınırsa bu fonksiyon düzenlenecektir.
+	private Integer okut() {//İleride input GUI' den alınırsa bu fonksiyon düzenlenecektir.
 		Integer a=-1;
 		boolean hataligiris=false;
 		while (a<0 || a>9)
@@ -331,7 +330,7 @@ public class Oyun {
 		
 	}
 
-	private void yazdir(String string) {  //GUI Label' ına String yazdırır. 
+	private void yazdir(String string) {  //GUI Label' ına  ve konsola String yazdırır. 
 		if( ! konsoldaCalismali) {Main.label.setText(string);}
 		System.out.println(string);
 		
@@ -339,7 +338,7 @@ public class Oyun {
 	}
 	
 	
-	private String debugOtoIpucuHesapla(Integer[] yapilanTahmin,Integer gelenPoz,Integer gelenNeg,Integer[] dogruVarsayilan){
+	private String debugOtoIpucuHesapla(Integer[] yapilanTahmin,Integer[] dogruVarsayilan){
 		//testEt fonksiyonunun neredeyse aynısıdır. Varsayılan sayı için ipuçlarını otomatik hesaplar ve yazdırır. Debug işlemini hızlandırır. 
 			Integer pozitif=0;
 			Integer negatif=0;
