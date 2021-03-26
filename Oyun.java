@@ -1,25 +1,26 @@
 /*DERLEME KILAVUZU: 
- * Oyun konsolda çalışacaksa: Oyun.java dosyası application isimli bir paketin içine konur, Oyun.java' nın void main()' i çağırılır.
- * 	Eğer başka bir classtan çağırılacaksa bir adet oyun instantiate edilir ve Oyun.oynat(true) fonksiyonu çağırılır(true inputu: konsolda çalışma ayarlarını yapar).
+ * Oyun konsolda Ã§alÄ±ÅŸacaksa: Oyun.java dosyasÄ± application isimli bir paketin iÃ§ine konur, Oyun.java' nÄ±n void main()' i Ã§aÄŸÄ±rÄ±lÄ±r.
+ * 	EÄŸer baÅŸka bir classtan Ã§aÄŸÄ±rÄ±lacaksa bir adet oyun Oyun.(true) ÅŸeklinde constructorla instantiate edilir(true inputu: konsolda Ã§alÄ±ÅŸma ayarlarÄ±nÄ± yapar) 
+ *	ve Oyun.oynat() fonksiyonu Ã§aÄŸÄ±rÄ±lÄ±r.
  * 
- * Oyun GUI ile çalışacaksa: Main.java ve Oyun.java dosyaları application isimli bir paketin içine konur. Main.java'nın void main' i çağırılır.
- * 	GUI' de sorunlar vardır. Detaylı bilgi Main.java GUI KULLANIM KILAVUZU' nda paylaşılmıştır.
+ * Oyun GUI ile Ã§alÄ±ÅŸacaksa: Main.java ve Oyun.java dosyalarÄ± application isimli bir paketin iÃ§ine konur. Main.java'nÄ±n void main' i Ã§aÄŸÄ±rÄ±lÄ±r.
+ * 	GUI' de sorunlar vardÄ±r. DetaylÄ± bilgi Main.java GUI KULLANIM KILAVUZU' nda paylaÅŸÄ±lmÄ±ÅŸtÄ±r.
  * 
  * OYUN KULLANIM KILAVUZU:
- * Merhaba, bu oyunda CPU ve kullanıcı akıllarından 4 basamaklı ve rakamları farklı bir sayı tutar(örn: 1234 gibi,1111 değil)
- * ve sırayla tahmin ederek karşı tarafın tuttuğu sayıyı bulmaya çalışırlar. Doğru tahmini ilk yapan kazanır. 
- * Doğru tahmin edilen her basamak için karşı tarafa o sayıda pozitif ipucu verilir.
- * Doğru tahmin edilen ama yanlış basamaktaki her rakam için karşı tarafa o sayıda negatif ipucu verilir.
- * Örnek: Doğru Sayı:1234 Tahmin:1239 ise pozitif:3 negatif:0 
- * Örnek: Doğru Sayı:1234 Tahmin:4321 ise pozitif:0 negatif:4
- * CPU gelen ipuçlarını bütün sayı kombinasyonlarında test ederek mümkün olmayan kombinasyonları eler ve en son kalan kombinasyonu doğru olarak tahmin eder.
- * Kullanıcının her şart altında integer değer gireceği var sayılmıştır.
- * Kullanıcı rakam(0-9 arası tam sayılar) olmayan sayı ya da karakter girerse, rakamları farklı olmayan sayı oluşturmaya çalışırsa, imkansız ipuçları oluşturmaya çalışırsa 
- * Uyarı alır ve tekrar giriş yapması istenir.
- * Kullanıcı ipuçlarını yanlış hesaplarsa tahmin edilecek olası kombinasyon kalmaz ve hakem hata bildirisi yapar.
- * Kullanıcının tuttuğu sayıyı oyuna girmesi yasaktır. Bu sebeple kullanıcı hata yaparak oyunu kazanırsa ne yazık ki hata tespiti yapılamaz.
- * İleride bu oyunun olası yasaksız versiyonuna kolaylıkla geçiş yapabilmek için eski ipuçları ve tahminler bu oyunda depolanır.
- * İşbu yasak kalkarsa hatanın yapıldığı tur numarası tespit edilebilir ve oyun oradan devam edebilir.
+ * Merhaba, bu oyunda CPU ve kullanÄ±cÄ± akÄ±llarÄ±ndan 4 basamaklÄ± ve rakamlarÄ± farklÄ± bir sayÄ± tutar(Ã¶rn: 1234 gibi,1111 deÄŸil)
+ * ve sÄ±rayla tahmin ederek karÅŸÄ± tarafÄ±n tuttuÄŸu sayÄ±yÄ± bulmaya Ã§alÄ±ÅŸÄ±rlar. DoÄŸru tahmini ilk yapan kazanÄ±r. 
+ * DoÄŸru tahmin edilen her basamak iÃ§in karÅŸÄ± tarafa o sayÄ±da pozitif ipucu verilir.
+ * DoÄŸru tahmin edilen ama yanlÄ±ÅŸ basamaktaki her rakam iÃ§in karÅŸÄ± tarafa o sayÄ±da negatif ipucu verilir.
+ * Ã–rnek: DoÄŸru SayÄ±:1234 Tahmin:1239 ise pozitif:3 negatif:0 
+ * Ã–rnek: DoÄŸru SayÄ±:1234 Tahmin:4321 ise pozitif:0 negatif:4
+ * CPU gelen ipuÃ§larÄ±nÄ± bÃ¼tÃ¼n sayÄ± kombinasyonlarÄ±nda test ederek mÃ¼mkÃ¼n olmayan kombinasyonlarÄ± eler ve en son kalan kombinasyonu doÄŸru olarak tahmin eder.
+ * KullanÄ±cÄ±nÄ±n her ÅŸart altÄ±nda integer deÄŸer gireceÄŸi var sayÄ±lmÄ±ÅŸtÄ±r.
+ * KullanÄ±cÄ± rakam(0-9 arasÄ± tam sayÄ±lar) olmayan sayÄ± ya da karakter girerse, rakamlarÄ± farklÄ± olmayan sayÄ± oluÅŸturmaya Ã§alÄ±ÅŸÄ±rsa, imkansÄ±z ipuÃ§larÄ± oluÅŸturmaya Ã§alÄ±ÅŸÄ±rsa 
+ * UyarÄ± alÄ±r ve tekrar giriÅŸ yapmasÄ± istenir.
+ * KullanÄ±cÄ± ipuÃ§larÄ±nÄ± yanlÄ±ÅŸ hesaplarsa tahmin edilecek olasÄ± kombinasyon kalmaz ve hakem hata bildirisi yapar.
+ * KullanÄ±cÄ±nÄ±n tuttuÄŸu sayÄ±yÄ± oyuna girmesi yasaktÄ±r. Bu sebeple kullanÄ±cÄ± hata yaparak oyunu kazanÄ±rsa ne yazÄ±k ki hata tespiti yapÄ±lamaz.
+ * Ä°leride bu oyunun olasÄ± yasaksÄ±z versiyonuna kolaylÄ±kla geÃ§iÅŸ yapabilmek iÃ§in eski ipuÃ§larÄ± ve tahminler bu oyunda depolanÄ±r.
+ * Ä°ÅŸbu yasak kalkarsa hatanÄ±n yapÄ±ldÄ±ÄŸÄ± tur numarasÄ± tespit edilebilir ve oyun oradan devam edebilir.
  */
 
 package application;
@@ -33,29 +34,29 @@ import java.util.Scanner;
 public class Oyun {
 	
 	public static void main(String[] args) {
-			System.out.println("Oyun/void main kullanıldı.");
-			Oyun oyun=new Oyun(true);//true: konsolda çalıştırır
+			System.out.println("Oyun/void main kullanÄ±ldÄ±.");
+			Oyun oyun=new Oyun(true);//true: konsolda Ã§alÄ±ÅŸtÄ±rÄ±r
 			oyun.oynat();
 			
 		}
-	private boolean konsoldaCalismali; //true ise konsola göre ayar yapılır, false ise GUI' ye göre ayar yapılır.
-	private boolean debugModu; //Debug modunda kullanıcı 1234 sayısını seçtiği var sayılır. İpuçları sistem tarafından hesaplanır. Debugging işlemi kolaylaşır.  
+	private boolean konsoldaCalismali; //true ise konsola gÃ¶re ayar yapÄ±lÄ±r, false ise GUI' ye gÃ¶re ayar yapÄ±lÄ±r.
+	private boolean debugModu; //Debug modunda kullanÄ±cÄ± 1234 sayÄ±sÄ±nÄ± seÃ§tiÄŸi var sayÄ±lÄ±r. Ä°puÃ§larÄ± sistem tarafÄ±ndan hesaplanÄ±r. Debugging iÅŸlemi kolaylaÅŸÄ±r.  
 	private Scanner keyboard;
-	private Integer cpununKonumu[]= {0,0,0,0,0}; //CPUnun seçtiği sayıyı temsil eder.
-	private Integer cpununTahmini[]= {0,0,0,0,0}; //CPUnun tahmin ettiği sayıyı temsil eder.
-	private Integer kullaniciTahmini[]= {0,0,0,0,0}; //Kullanıcının tahmin ettiği sayıyı temsil eder.
-	private List<Integer[]>tahminler ; //CPUnun tahminleri burada depolanır.
+	private Integer cpununKonumu[]= {0,0,0,0,0}; //CPUnun seÃ§tiÄŸi sayÄ±yÄ± temsil eder.
+	private Integer cpununTahmini[]= {0,0,0,0,0}; //CPUnun tahmin ettiÄŸi sayÄ±yÄ± temsil eder.
+	private Integer kullaniciTahmini[]= {0,0,0,0,0}; //KullanÄ±cÄ±nÄ±n tahmin ettiÄŸi sayÄ±yÄ± temsil eder.
+	private List<Integer[]>tahminler ; //CPUnun tahminleri burada depolanÄ±r.
 	
-	private List<Integer>cpuyaPozKayit ; //CPUya verilen pozitif ipuçlarını kaydeder. 
-	private List<Integer>cpuyaNegKayit; //CPUya verilen negatif ipuçlarını kaydeder.
-	private Integer kullaniciyaPoz; //Kullanıcıya verilen pozitif ipucu
-	private Integer kullaniciyaNeg; //Kullanıcıya verilen negatif ipucu
+	private List<Integer>cpuyaPozKayit ; //CPUya verilen pozitif ipuÃ§larÄ±nÄ± kaydeder. 
+	private List<Integer>cpuyaNegKayit; //CPUya verilen negatif ipuÃ§larÄ±nÄ± kaydeder.
+	private Integer kullaniciyaPoz; //KullanÄ±cÄ±ya verilen pozitif ipucu
+	private Integer kullaniciyaNeg; //KullanÄ±cÄ±ya verilen negatif ipucu
     
    
-	private boolean oyunBitmeli=false; //oyunun bitmesini gerektiren bir durumun varlığı
+	private boolean oyunBitmeli=false; //oyunun bitmesini gerektiren bir durumun varlÄ±ÄŸÄ±
 	private Random rand;
 	
-	private List<Integer[]>uzay; //tahmin edilebilecek geçerli sayı kombinasyonlarının listesi (olasılık uzayı)
+	private List<Integer[]>uzay; //tahmin edilebilecek geÃ§erli sayÄ± kombinasyonlarÄ±nÄ±n listesi (olasÄ±lÄ±k uzayÄ±)
 	
     
     public Oyun(boolean konsoldaCalismali) {
@@ -75,15 +76,15 @@ public class Oyun {
 						if(farkliysaTrueDon(x,y,z,w)) {
 
 							Integer[] a= {x,y,z,w}; 
-							this.uzay.add((a)); //Geçerli sayı kombinasyonlarını listele.
+							this.uzay.add((a)); //GeÃ§erli sayÄ± kombinasyonlarÄ±nÄ± listele.
 						}	
 					}		
 				}	
 			}
 		}
-	    this.cpununKonumu=this.uzay.get(this.rand.nextInt(this.uzay.size())); //CPU uzaydan rastgele bir sayı seçer
+	    this.cpununKonumu=this.uzay.get(this.rand.nextInt(this.uzay.size())); //CPU uzaydan rastgele bir sayÄ± seÃ§er
 	    //System.out.println(cpununKonumu[0]+""+cpununKonumu[1]+""+cpununKonumu[2]+""+cpununKonumu[3]+"");
-	    this.cpununTahmini=this.uzay.get(this.rand.nextInt(this.uzay.size())); //CPU ilk tahminini rastgele seçer
+	    this.cpununTahmini=this.uzay.get(this.rand.nextInt(this.uzay.size())); //CPU ilk tahminini rastgele seÃ§er
 	
     }
 	public void oynat() {
@@ -91,12 +92,12 @@ public class Oyun {
 		aciklamaYap();
 		while( ! this.oyunBitmeli) {
 			
-			kullaniciyaIpucVerTahminAl(); //Kullanıcıya varsa ipucu verilir ve tahmini alınır.
-			gelenTahminiDegerlendir(); //Kullanıcının tahminine göre ipuçları hesaplanır.
+			kullaniciyaIpucVerTahminAl(); //KullanÄ±cÄ±ya varsa ipucu verilir ve tahmini alÄ±nÄ±r.
+			gelenTahminiDegerlendir(); //KullanÄ±cÄ±nÄ±n tahminine gÃ¶re ipuÃ§larÄ± hesaplanÄ±r.
 			hakemeGit(); //Hakem oyunun bitip bitmemesine karar verir.
 			
-			tahminEt(); //Varsa ipuçları değerlendirilir ve tahmin yapılır.
-			tahminSonuclariniIste();//Kullanıcıdan ipucu alınır.
+			tahminEt(); //Varsa ipuÃ§larÄ± deÄŸerlendirilir ve tahmin yapÄ±lÄ±r.
+			tahminSonuclariniIste();//KullanÄ±cÄ±dan ipucu alÄ±nÄ±r.
 			hakemeGit();//Hakem oyunun bitip bitmemesine karar verir.
 		}
 		
@@ -104,20 +105,20 @@ public class Oyun {
 	}		
     
 	private void aciklamaYap() {
-		yazdir("Merhaba, bu oyunda CPU ve kullanıcı akıllarından 4 basamaklı ve rakamları farklı bir sayı tutar(örn: 1234 gibi,1111 değil)\n"
-				+"ve sırayla tahmin ederek karşı tarafın tuttuğu sayıyı bulmaya çalışırlar. Doğru tahmini ilk yapan kazanır.\n" 
-				+"Doğru tahmin edilen her basamak için karşı tarafa o sayıda pozitif ipucu verilir.\n"
-				+"Doğru tahmin edilen ama yanlış basamaktaki her rakam için karşı tarafa o sayıda negatif ipucu verilir.\n"
-				+"Örnek: Doğru Sayı:1234 Tahmin:1239 ise pozitif:3 negatif:0 \n"
-				+"Örnek: Doğru Sayı:1234 Tahmin:4321 ise pozitif:0 negatif:4 \n"
-				+"CPU gelen ipuçlarını bütün sayı kombinasyonlarında test ederek mümkün olmayan kombinasyonları eler ve en son kalan kombinasyonu doğru olarak tahmin eder.\n"
-				+"Kullanıcının her şart altında integer değer gireceği var sayılmıştır.\n"
-				+"Kullanıcı rakam(0-9 arası tam sayılar) olmayan sayı ya da karakter girerse, rakamları farklı olmayan sayı oluşturmaya çalışırsa, imkansız ipuçları oluşturmaya çalışırsa \n"
-				+"Uyarı alır ve tekrar giriş yapması istenir.\n"
-				+"Kullanıcı ipuçlarını yanlış hesaplarsa tahmin edilecek olası kombinasyon kalmaz ve hakem hata bildirisi yapar\n"
-				+"Kullanıcının tuttuğu sayıyı oyuna girmesi yasaktır. Bu sebeple kullanıcı hata yaparak oyunu kazanırsa ne yazık ki hata tespiti yapılamaz.\n"
-				+"İleride bu oyunun olası yasaksız versiyonuna kolaylıkla geçiş yapabilmek için eski ipuçları ve tahminler bu oyunda depolanır.\n"
-				+"İşbu yasak kalkarsa hatanın yapıldığı tur numarası tespit edilebilir ve oyun oradan devam edebilir.\n"
+		yazdir("Merhaba, bu oyunda CPU ve kullanÄ±cÄ± akÄ±llarÄ±ndan 4 basamaklÄ± ve rakamlarÄ± farklÄ± bir sayÄ± tutar(Ã¶rn: 1234 gibi,1111 deÄŸil)\n"
+				+"ve sÄ±rayla tahmin ederek karÅŸÄ± tarafÄ±n tuttuÄŸu sayÄ±yÄ± bulmaya Ã§alÄ±ÅŸÄ±rlar. DoÄŸru tahmini ilk yapan kazanÄ±r.\n" 
+				+"DoÄŸru tahmin edilen her basamak iÃ§in karÅŸÄ± tarafa o sayÄ±da pozitif ipucu verilir.\n"
+				+"DoÄŸru tahmin edilen ama yanlÄ±ÅŸ basamaktaki her rakam iÃ§in karÅŸÄ± tarafa o sayÄ±da negatif ipucu verilir.\n"
+				+"Ã–rnek: DoÄŸru SayÄ±:1234 Tahmin:1239 ise pozitif:3 negatif:0 \n"
+				+"Ã–rnek: DoÄŸru SayÄ±:1234 Tahmin:4321 ise pozitif:0 negatif:4 \n"
+				+"CPU gelen ipuÃ§larÄ±nÄ± bÃ¼tÃ¼n sayÄ± kombinasyonlarÄ±nda test ederek mÃ¼mkÃ¼n olmayan kombinasyonlarÄ± eler ve en son kalan kombinasyonu doÄŸru olarak tahmin eder.\n"
+				+"KullanÄ±cÄ±nÄ±n her ÅŸart altÄ±nda integer deÄŸer gireceÄŸi var sayÄ±lmÄ±ÅŸtÄ±r.\n"
+				+"KullanÄ±cÄ± rakam(0-9 arasÄ± tam sayÄ±lar) olmayan sayÄ± ya da karakter girerse, rakamlarÄ± farklÄ± olmayan sayÄ± oluÅŸturmaya Ã§alÄ±ÅŸÄ±rsa, imkansÄ±z ipuÃ§larÄ± oluÅŸturmaya Ã§alÄ±ÅŸÄ±rsa \n"
+				+"UyarÄ± alÄ±r ve tekrar giriÅŸ yapmasÄ± istenir.\n"
+				+"KullanÄ±cÄ± ipuÃ§larÄ±nÄ± yanlÄ±ÅŸ hesaplarsa tahmin edilecek olasÄ± kombinasyon kalmaz ve hakem hata bildirisi yapar\n"
+				+"KullanÄ±cÄ±nÄ±n tuttuÄŸu sayÄ±yÄ± oyuna girmesi yasaktÄ±r. Bu sebeple kullanÄ±cÄ± hata yaparak oyunu kazanÄ±rsa ne yazÄ±k ki hata tespiti yapÄ±lamaz.\n"
+				+"Ä°leride bu oyunun olasÄ± yasaksÄ±z versiyonuna kolaylÄ±kla geÃ§iÅŸ yapabilmek iÃ§in eski ipuÃ§larÄ± ve tahminler bu oyunda depolanÄ±r.\n"
+				+"Ä°ÅŸbu yasak kalkarsa hatanÄ±n yapÄ±ldÄ±ÄŸÄ± tur numarasÄ± tespit edilebilir ve oyun oradan devam edebilir.\n"
 				+"\n");
 	}
     
@@ -129,10 +130,10 @@ public class Oyun {
 			int y=kullaniciTahmini[1];
 			int z=kullaniciTahmini[2];
 			int w=kullaniciTahmini[3];
-			yazdir("son tahmininiz: "+x+""+y+""+z+""+w+"" + " pozitifler: "+ kullaniciyaPoz + " negatifler " + kullaniciyaNeg + " Lutfen rakamları birer birer girerek tahminde bulununuz." );
+			yazdir("son tahmininiz: "+x+""+y+""+z+""+w+"" + " pozitifler: "+ kullaniciyaPoz + " negatifler " + kullaniciyaNeg + " Lutfen rakamlarÄ± birer birer girerek tahminde bulununuz." );
 		}
 		
-		else{yazdir("Lutfen rakamları birer birer girerek tahminde bulununuz.");}
+		else{yazdir("Lutfen rakamlarÄ± birer birer girerek tahminde bulununuz.");}
 		
 		//tahmini al
 		int x = -99;
@@ -140,8 +141,8 @@ public class Oyun {
 		int z = -99;
 		int w = -99;
 		boolean hataliGiris=false;
-		while(! farkliysaTrueDon(x,y,z,w)) { //rakamları farklı 4 basamaklı tahmin al.
-			if(hataliGiris) {System.out.println("Hatalı giriş basamakları tekrar giriniz.");}
+		while(! farkliysaTrueDon(x,y,z,w)) { //rakamlarÄ± farklÄ± 4 basamaklÄ± tahmin al.
+			if(hataliGiris) {System.out.println("HatalÄ± giriÅŸ basamaklarÄ± tekrar giriniz.");}
 			x = okut();
 			y = okut();
 			z = okut();
@@ -161,25 +162,25 @@ public class Oyun {
 	private void gelenTahminiDegerlendir() {
 		if(oyunBitmeli) {return;}
 		
-		testEt(kullaniciTahmini,0,0,cpununKonumu,true); //true: tahmin için ipucu oluşturur.
+		testEt(kullaniciTahmini,0,0,cpununKonumu,true); //true: tahmin iÃ§in ipucu oluÅŸturur.
 		
 	}
 
 	private void hakemeGit() {
 		if(oyunBitmeli) {return;}
 		
-		if(cpuyaPozKayit.size()>0 && uzay.size()==0) { //Uzayda kombinasyon kalmadıysa hata vardır.
+		if(cpuyaPozKayit.size()>0 && uzay.size()==0) { //Uzayda kombinasyon kalmadÄ±ysa hata vardÄ±r.
 			yazdir("Hata tespit edildi.");
 			oyunBitmeli=true;
 			return;
 		}
-		if(kullaniciyaPoz==4) { //Kullanıcı 4 pozitif bildiyse kazanır.
+		if(kullaniciyaPoz==4) { //KullanÄ±cÄ± 4 pozitif bildiyse kazanÄ±r.
 			oyunBitmeli=true;
 			yazdir("Kullanici kazandi.");
 			return;
 			}
 		
-		if(cpuyaPozKayit.size()>0 && cpuyaPozKayit.get(cpuyaPozKayit.size()-1)==4) { //CPU 4 pozitif bildiyse kazanır.
+		if(cpuyaPozKayit.size()>0 && cpuyaPozKayit.get(cpuyaPozKayit.size()-1)==4) { //CPU 4 pozitif bildiyse kazanÄ±r.
 			oyunBitmeli=true;
 			yazdir("CPU kazandi.");
 			return;
@@ -192,14 +193,14 @@ public class Oyun {
 		if(tahminler.size()==0) {
 			tahminler.add(cpununTahmini);}
 		else {
-			uzayAzalt(); //tahmin öncesi imkansız kombinasyonları ele.
+			uzayAzalt(); //tahmin Ã¶ncesi imkansÄ±z kombinasyonlarÄ± ele.
 			
 			if(uzay.size()==0) {
 				
-				hakemeGit(); //kombinasyon kalmadıysa hata vardır hakeme git.
+				hakemeGit(); //kombinasyon kalmadÄ±ysa hata vardÄ±r hakeme git.
 				return;}
-			tahminler.add(uzay.get(rand.nextInt(uzay.size()))); //uzaydan RASTGELE kombinasyon seç. Listenin başından da seçebilirdik ama o zaman kullanıcı her seferinde listenin sonundaki
-																//değerlerden seçerek kazanma şansını artırabilirdi.
+			tahminler.add(uzay.get(rand.nextInt(uzay.size()))); //uzaydan RASTGELE kombinasyon seÃ§. Listenin baÅŸÄ±ndan da seÃ§ebilirdik ama o zaman kullanÄ±cÄ± her seferinde listenin sonundaki
+																//deÄŸerlerden seÃ§erek kazanma ÅŸansÄ±nÄ± artÄ±rabilirdi.
 			
 		}
 		
@@ -212,19 +213,19 @@ public class Oyun {
 		int y=this.tahminler.get(this.tahminler.size()-1)[1];
 		int z=this.tahminler.get(this.tahminler.size()-1)[2];
 		int w=this.tahminler.get(this.tahminler.size()-1)[3];
-		System.out.println("Kalan kombinasyon sayısı: "+uzay.size());
+		System.out.println("Kalan kombinasyon sayÄ±sÄ±: "+uzay.size());
 		if(this.debugModu==true) {
 			Integer[] a= {1,2,3,4};
 			String dogruCevap = debugOtoIpucuHesapla(this.tahminler.get(this.tahminler.size()-1), 0, 0,a);
-			yazdir("Tahminim: "+x+""+y+""+z+""+w+" Lütfen negatif ve pozitif ipuçlarını sırayla,- işareti kullanmadan giriniz. "+dogruCevap);}
-		else{yazdir("Tahminim: "+x+""+y+""+z+""+w+" Lütfen negatif ve pozitif ipuçlarını sırayla,- işareti kullanmadan giriniz.");}
+			yazdir("Tahminim: "+x+""+y+""+z+""+w+" LÃ¼tfen negatif ve pozitif ipuÃ§larÄ±nÄ± sÄ±rayla,- iÅŸareti kullanmadan giriniz. "+dogruCevap);}
+		else{yazdir("Tahminim: "+x+""+y+""+z+""+w+" LÃ¼tfen negatif ve pozitif ipuÃ§larÄ±nÄ± sÄ±rayla,- iÅŸareti kullanmadan giriniz.");}
 		
 		int neg;
 		int poz;
 		boolean hataliGiris=false;
-		do {//Kullanıcıdan ipucu alır.
+		do {//KullanÄ±cÄ±dan ipucu alÄ±r.
 			if(hataliGiris) {
-				System.out.println("Hatalı giriş negatif ve pozitif ipuçlarını tekrar giriniz.");
+				System.out.println("HatalÄ± giriÅŸ negatif ve pozitif ipuÃ§larÄ±nÄ± tekrar giriniz.");
 			}
 			neg=okut();
 			poz=okut();
@@ -237,23 +238,23 @@ public class Oyun {
 	}
 
 	private boolean farkliysaTrueDon(int x, int y, int z, int w) {
-    	//Inputta girilen sayılar farklıysa true döner.
+    	//Inputta girilen sayÄ±lar farklÄ±ysa true dÃ¶ner.
 		return x!=y && x!=z && x!=w &&
 		y!=z && y!=w && 
 		z!=w;
 	}
     
     private boolean testEt(Integer[] yapilanTahmin,Integer gelenPoz,Integer gelenNeg,Integer[] dogruVarsayilan,boolean ipucVerilsin){
-    	//Doğru olduğu varsayılan sayının, aynı tahmin için aynı ipuçlarını vermesi beklenir. 
+    	//DoÄŸru olduÄŸu varsayÄ±lan sayÄ±nÄ±n, aynÄ± tahmin iÃ§in aynÄ± ipuÃ§larÄ±nÄ± vermesi beklenir. 
 		Integer pozitif=0;
 		Integer negatif=0;
-		for (int i=0;i<4;i++) {  //Doğru olduğu varsayılan sayı için pozitif sayısı hesaplar.
+		for (int i=0;i<4;i++) {  //DoÄŸru olduÄŸu varsayÄ±lan sayÄ± iÃ§in pozitif sayÄ±sÄ± hesaplar.
 			if (yapilanTahmin[i]==dogruVarsayilan[i]) {
 				pozitif++;
 				
 			}
 		}
-		for (int i=0;i<4;i++) {  //Doğru olduğu varsayılan sayı için negatif sayısı hesaplar.
+		for (int i=0;i<4;i++) {  //DoÄŸru olduÄŸu varsayÄ±lan sayÄ± iÃ§in negatif sayÄ±sÄ± hesaplar.
 			for (int j=0;j<4;j++) {
 				if(i==j) {continue;}
 				if (yapilanTahmin[i]==dogruVarsayilan[j]) {
@@ -263,11 +264,11 @@ public class Oyun {
 			}
 				
 		}
-		if(ipucVerilsin) {  //Kullanıcıya ipucu verir.
+		if(ipucVerilsin) {  //KullanÄ±cÄ±ya ipucu verir.
 			this.kullaniciyaPoz=pozitif;
 			this.kullaniciyaNeg=negatif;
 		}
-		if(negatif==gelenNeg&&pozitif==gelenPoz) { //Doğru varsayılan sayı testte aynı ipuçlarını üretiyorsa doğru olması mümkündür. Değilse o sayının seçilmediği anlaşılır. 
+		if(negatif==gelenNeg&&pozitif==gelenPoz) { //DoÄŸru varsayÄ±lan sayÄ± testte aynÄ± ipuÃ§larÄ±nÄ± Ã¼retiyorsa doÄŸru olmasÄ± mÃ¼mkÃ¼ndÃ¼r. DeÄŸilse o sayÄ±nÄ±n seÃ§ilmediÄŸi anlaÅŸÄ±lÄ±r. 
 			
 			return true;
 		}
@@ -278,15 +279,15 @@ public class Oyun {
 	private void uzayAzalt() {
 		
 		
-		int j=tahminler.size()-1;  //Yapılan son tahminin indisi
+		int j=tahminler.size()-1;  //YapÄ±lan son tahminin indisi
 		for(int i=0;i<this.uzay.size();i++) {
-			if( ! testEt(this.tahminler.get(j),this.cpuyaPozKayit.get(j),this.cpuyaNegKayit.get(j),this.uzay.get(i),false)) {//Uzaydaki her elemanı test et. Testi geçemeyeni uzaydan at.
+			if( ! testEt(this.tahminler.get(j),this.cpuyaPozKayit.get(j),this.cpuyaNegKayit.get(j),this.uzay.get(i),false)) {//Uzaydaki her elemanÄ± test et. Testi geÃ§emeyeni uzaydan at.
 				this.uzay.remove(i);
 				i--;
 			}
 		}
 		
-		//Aşağıdaki kod ileride kullanıcının girdiği sayıyı paylaşacağı bir versiyonda kullanılmak üzere tasarlanmıştır.
+		//AÅŸaÄŸÄ±daki kod ileride kullanÄ±cÄ±nÄ±n girdiÄŸi sayÄ±yÄ± paylaÅŸacaÄŸÄ± bir versiyonda kullanÄ±lmak Ã¼zere tasarlanmÄ±ÅŸtÄ±r.
 	/*	for(int j=0;j<this.tahminler.size();j++) {
 			for(int i=0;i<this.uzay.size();i++) {
 				if( ! testEt(this.tahminler.get(j),this.cpuyaPozKayit.get(j),this.cpuyaNegKayit.get(j),this.uzay.get(i),false)) {
@@ -300,19 +301,19 @@ public class Oyun {
 	}
 
 
-	private Integer okut() {//İleride input arayüzden alınırsa bu fonksiyon düzenlenecektir.
+	private Integer okut() {//Ä°leride input arayÃ¼zden alÄ±nÄ±rsa bu fonksiyon dÃ¼zenlenecektir.
 		Integer a=-1;
 		boolean hataligiris=false;
 		while (a<0 || a>9)
 		{
 			if(hataligiris) {
-				System.out.println("Hatali giriş tekrar rakam giriniz.");
+				System.out.println("Hatali giriÅŸ tekrar rakam giriniz.");
 			}
 			String temp="";
-		//	if( ! konsoldaCalismali) {temp=guiOku() ;} else{temp=keyboard.next();} //gui' den input almaya çalışınca gui kitleniyor
+		//	if( ! konsoldaCalismali) {temp=guiOku() ;} else{temp=keyboard.next();} //gui' den input almaya Ã§alÄ±ÅŸÄ±nca gui kitleniyor
 			temp=keyboard.next(); 			
 			if (temp.equals("0") || temp.equals("1") || temp.equals("2") || temp.equals("3") || temp.equals("4") || temp.equals("5") 
-					|| temp.equals("6") || temp.equals("7") || temp.equals("8") || temp.equals("9") ){  //girilenin rakam olup olmadığını kontrol et
+					|| temp.equals("6") || temp.equals("7") || temp.equals("8") || temp.equals("9") ){  //girilenin rakam olup olmadÄ±ÄŸÄ±nÄ± kontrol et
 				a=Integer.parseInt(temp);
 				} 
 			
@@ -322,16 +323,16 @@ public class Oyun {
 		return a;
 	}
 
-	private  String guiOku() { //GUI' den input alır. GUI' de hata olduğu için çalışmıyor.
-		Main.inputIstendi=true; //GUI' den input istenmiştir.
-		while( ! Main.inputGeldi) {} //GUI input döndürene kadar sonsuz döngüde bekle.
-		Main.inputGeldi=false; //GUI input döndürdü, flagi resetle.
+	private  String guiOku() { //GUI' den input alÄ±r. GUI' de hata olduÄŸu iÃ§in Ã§alÄ±ÅŸmÄ±yor.
+		Main.inputIstendi=true; //GUI' den input istenmiÅŸtir.
+		while( ! Main.inputGeldi) {} //GUI input dÃ¶ndÃ¼rene kadar sonsuz dÃ¶ngÃ¼de bekle.
+		Main.inputGeldi=false; //GUI input dÃ¶ndÃ¼rdÃ¼, flagi resetle.
 		
 		return Main.input; //
 		
 	}
 
-	private void yazdir(String string) {  //GUI Label' ına String yazdırır. 
+	private void yazdir(String string) {  //GUI Label' Ä±na String yazdÄ±rÄ±r. 
 		if( ! konsoldaCalismali) {Main.label.setText(string);}
 		System.out.println(string);
 		
@@ -340,7 +341,7 @@ public class Oyun {
 	
 	
 	private String debugOtoIpucuHesapla(Integer[] yapilanTahmin,Integer gelenPoz,Integer gelenNeg,Integer[] dogruVarsayilan){
-		//testEt fonksiyonunun neredeyse aynısıdır. Varsayılan sayı için ipuçlarını otomatik hesaplar ve yazdırır. Debug işlemini hızlandırır. 
+		//testEt fonksiyonunun neredeyse aynÄ±sÄ±dÄ±r. VarsayÄ±lan sayÄ± iÃ§in ipuÃ§larÄ±nÄ± otomatik hesaplar ve yazdÄ±rÄ±r. Debug iÅŸlemini hÄ±zlandÄ±rÄ±r. 
 			Integer pozitif=0;
 			Integer negatif=0;
 			for (int i=0;i<4;i++) {
@@ -360,6 +361,6 @@ public class Oyun {
 					
 			}
 						
-			return "default seçim olan '1234' için doğru cevap:"+Integer.toString(negatif) +" "+Integer.toString(pozitif);
+			return "default seÃ§im olan '1234' iÃ§in doÄŸru cevap:"+Integer.toString(negatif) +" "+Integer.toString(pozitif);
 		}
 }
