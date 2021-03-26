@@ -86,7 +86,7 @@ public class Main extends Application implements EventHandler<ActionEvent>  {
 			oyun=new Oyun(false);
 			oyun.oynat();
 		}
-		if(inputIstendi) { //input istenmişken tuşa basıldıysa,
+		if(inputIstendi) { //Input istenmişken tuşa basıldıysa,
 			input=((Button) event.getSource()).getText(); //inputu kaydet.
 			inputGeldi=true; //GUI input döndürdü.
 			inputIstendi=false; //artık input istenmiyor.
