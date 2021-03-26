@@ -3,7 +3,7 @@
  * 	Eğer başka bir classtan çağırılacaksa bir adet oyun Oyun.(true) şeklinde constructorla instantiate edilir(true inputu: konsolda çalışma ayarlarını yapar) 
  *	ve Oyun.oynat() fonksiyonu çağırılır.
  * 
- * Oyun GUI ile çalışacaksa: Main.java ve Oyun.java dosyaları application isimli bir paketin içine konur. Main.java'nın void main' i çağırılır.
+ * Oyun GUI ile çalışacaksa: Main.java ve Oyun.java dosyaları application isimli bir paketin içine konur. Main.java'nın void main()' i çağırılır.
  * 	GUI' de sorunlar vardır. Detaylı bilgi Main.java GUI KULLANIM KILAVUZU' nda paylaşılmıştır. 
  * 
  * GUI KULLANIM KILAVUZU:
@@ -42,7 +42,7 @@ public class Main extends Application implements EventHandler<ActionEvent>  {
 	static String input; //basılan tuşun değeri
 	static Label label; //Ekrana yazdırılacak outputu gösterir
 	
-	Oyun oyun; //Oyun instanc
+	Oyun oyun; //Oyun instanceı
 		
 	@Override
 	public void start(Stage primaryStage) {
@@ -51,9 +51,9 @@ public class Main extends Application implements EventHandler<ActionEvent>  {
 			inputIstendi=false;
 			primaryStage.setTitle("Sayı Tahmini Oyunu");
 			
-			HBox tuslarBox=new HBox();
-			ArrayList<Button> tuslar=new ArrayList<Button>();
-			for (int i=0;i<10;i++) {
+			HBox tuslarBox=new HBox(); //10 adet tuşun konulacağı HBox.
+			ArrayList<Button> tuslar=new ArrayList<Button>(); //Buttonları kaydeden liste.
+			for (int i=0;i<10;i++) { //10 adet Button instantiate et HBox a at.
 				tuslar.add(new Button(Integer.toString(i)));
 				tuslar.get(i).setOnAction(this);
 				tuslarBox.getChildren().add(tuslar.get(i));
@@ -80,13 +80,13 @@ public class Main extends Application implements EventHandler<ActionEvent>  {
 	}
 		
 	@Override
-	public void handle(ActionEvent event) {
+	public void handle(ActionEvent event) {  //GUI' de bir tuşa basıldığında çağırılır.
 		if(oyun==null) {
 			//Oyun instantiate edilmediyse, herhangi bir tuşa basıldığında oyun GUI' den oynanacak şekilde(input: false) başlasın.
 			oyun=new Oyun(false);
 			oyun.oynat();
 		}
-		if(inputIstendi) {
+		if(inputIstendi) { //inputIstenmişken tuşa basıldıysa,
 			input=((Button) event.getSource()).getText(); //inputu kaydet.
 			inputGeldi=true; //GUI input döndürdü.
 			inputIstendi=false; //artık input istenmiyor.
